@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Share() {
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  function submitForm() {
+    console.log("Submitting the form");
+    setFormSubmitted(true);
+  }
+
+  if (formSubmitted) {
+    return <h3>Thank you for sharing your book!!</h3>;
+  }
   return (
     <div>
       <h1>Share a book that you love!</h1>
@@ -31,7 +41,10 @@ export default function Share() {
           <input type="text" name="short description" />
         </label>
         <br />
-        <button type="button"> Share </button>
+        <button type="button" onClick={submitForm}>
+          {" "}
+          Share{" "}
+        </button>
       </form>
     </div>
   );
