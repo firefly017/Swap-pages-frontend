@@ -7,7 +7,13 @@ const BookCard = (props) => {
       <img src={props.imageUrl} alt="book" />
       <h2>{props.title}</h2>
 
-      <Link to={`/books/${props.id}`}>View details</Link>
+      <Link to={`/detail/${props.id}`}>
+        <button type="button">View details </button>
+      </Link>
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   );
 };
