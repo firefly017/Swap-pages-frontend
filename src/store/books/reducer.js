@@ -5,7 +5,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case "SAVE_BOOKS":
+    case "GET_BOOKS":
       return { ...state, all: [...action.payload] };
     default:
       return state;

@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { shareABook } from "../../store/books/actions";
+import { usePosition } from "use-position";
 
 export default function Share() {
   const dispatch = useDispatch();
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const { latitude, longitude, error } = usePosition(true, {
+    enableHighAccuracy: true,
+  });
 
   const submitForm = () => {
     setFormSubmitted(true);
@@ -15,7 +19,18 @@ export default function Share() {
     const ISBN = document.getElementById("ISBN").value;
     const description = document.getElementById("description").value;
     console.log("is title showing? " + title);
-    dispatch(shareABook(title, author, imageURL, genre, ISBN, description));
+    dispatch(
+      shareABook(
+        title,
+        author,
+        imageURL,
+        genre,
+        ISBN,
+        description,
+        latitude,
+        longitude
+      )
+    );
   };
 
   if (formSubmitted) {
