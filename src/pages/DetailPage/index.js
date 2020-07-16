@@ -15,6 +15,7 @@ const DetailPage = (params) => {
   });
   const booksToRender = () =>
     selectedBooks.map((book) => <DetailCard key={book.id} {...book} />);
+  // console.log(selectedBooks, "what is this?");
 
   return <div>{booksToRender()}</div>;
 };

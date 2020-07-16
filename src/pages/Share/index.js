@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { shareABook } from "../../store/books/actions";
 import { usePosition } from "use-position";
+import { Col, Form, Button } from "react-bootstrap";
 
 export default function Share() {
   const dispatch = useDispatch();
@@ -40,7 +41,89 @@ export default function Share() {
     <div>
       <h1>Share a book that you love!</h1>
       <br />
-      <form>
+      <Form as={Col} md={{ span: 6, offset: 3 }} className="mt-5">
+        <Form.Group>
+          <Form.Label>Title</Form.Label>
+          <Form.Control
+            // value={wordEn}
+            // onChange={(event) => setTitle(event.target.value)}
+            type="text"
+            id="title"
+            // autocomplete="off"
+            placeholder="Enter title"
+            required
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Author</Form.Label>
+          <Form.Control
+            // value={wordEn}
+            // onChange={(event) => setAuthor(event.target.value)}
+            type="text"
+            id="author"
+            // autocomplete="off"
+            placeholder="Enter author"
+            required
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Image URL</Form.Label>
+          <Form.Control
+            // value={wordEn}
+            // onChange={(event) => setImageUrl(event.target.value)}
+            type="text"
+            id="imageURL"
+            // autocomplete="off"
+            placeholder="Enter Image URL"
+            required
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Genre</Form.Label>
+          <Form.Control
+            // value={wordEn}
+            // onChange={(event) => setGenre(event.target.value)}
+            type="text"
+            id="genre"
+            // autocomplete="off"
+            placeholder="Enter Genre"
+            required
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>ISBN</Form.Label>
+          <Form.Control
+            // value={wordEn}
+            // onChange={(event) => setISBN(event.target.value)}
+            type="text"
+            id="ISBN"
+            // autocomplete="off"
+            placeholder="Enter ISBN"
+            required
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Description</Form.Label>
+          <Form.Control
+            // value={wordEn}
+            // onChange={(event) => setDescription(event.target.value)}
+            type="text"
+            id="description"
+            // autocomplete="off"
+            placeholder="Enter a short description"
+            required
+          />
+        </Form.Group>
+
+        <Form.Group className="mt-5">
+          {/* <Link to="/createcard"> */}
+          <Button variant="primary" type="submit" onClick={submitForm}>
+            Submit
+          </Button>
+          {/* </Link> */}
+        </Form.Group>
+      </Form>
+      {/* <form>
         <label>
           Title:
           <input type="text" id="title" name="name" />
@@ -75,7 +158,7 @@ export default function Share() {
           {" "}
           Share{" "}
         </button>
-      </form>
+      </form> */}
     </div>
   );
 }

@@ -12,7 +12,9 @@ export default function DetailCard(props) {
       <br />
       <p>Description: {props.description}</p>
 
-      <button type="button">Borrow </button>
+      <button type="button">
+        <a href={"mailto:" + props.user.email}>Borrow</a>
+      </button>
     </div>
   );
 }
